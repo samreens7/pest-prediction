@@ -1,0 +1,134 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.5.62
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema pestprediction
+--
+
+CREATE DATABASE IF NOT EXISTS pestprediction;
+USE pestprediction;
+
+--
+-- Definition of table `dataset`
+--
+
+DROP TABLE IF EXISTS `dataset`;
+CREATE TABLE `dataset` (
+  `did` int(11) NOT NULL AUTO_INCREMENT,
+  `imagename` varchar(900) DEFAULT NULL,
+  `disease` varchar(900) DEFAULT NULL,
+  `description` varchar(900) DEFAULT NULL,
+  PRIMARY KEY (`did`)
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dataset`
+--
+
+/*!40000 ALTER TABLE `dataset` DISABLE KEYS */;
+INSERT INTO `dataset` (`did`,`imagename`,`disease`,`description`) VALUES 
+ (59,'a1.jpg','kkhk','kjhkjkj'),
+ (60,'addword.PNG','askk','kjcka'),
+ (61,'blacklink.PNG','ksdfkk','zkhkahskd'),
+ (62,'farmer1.jpg','kkl;k;','lkjlklk'),
+ (63,'11','12-323','sas'),
+ (64,'20 -- 27','175 - 300','podzolic alluviul, heavy clay, riverine alluvial, Clayey Loam'),
+ (65,'asmssdada','ksdaddka','aksjdkad'),
+ (66,'img11.jpg','djjkd','askdjadk'),
+ (67,'a1.jpg','khk','hgfghfh'),
+ (68,'asmssdada','ksdaddka','aksjdkad'),
+ (69,'img11.jpg','djjkd','askdjadk');
+/*!40000 ALTER TABLE `dataset` ENABLE KEYS */;
+
+
+--
+-- Definition of table `imagematches`
+--
+
+DROP TABLE IF EXISTS `imagematches`;
+CREATE TABLE `imagematches` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `imagename` varchar(900) DEFAULT NULL,
+  `imgmatch` varchar(900) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=313 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `imagematches`
+--
+
+/*!40000 ALTER TABLE `imagematches` DISABLE KEYS */;
+INSERT INTO `imagematches` (`id`,`imagename`,`imgmatch`) VALUES 
+ (304,'a1.jpg','1.0'),
+ (305,'addword.PNG','0.23100346083476664'),
+ (306,'blacklink.PNG','0.12899272372514606'),
+ (307,'farmer1.jpg','0.9076120397846842'),
+ (308,'index1.jpg','0.05242355710354932'),
+ (309,'index10.jpg','0.08999588185071511'),
+ (310,'index3.jpg','0.07253443645467922'),
+ (311,'index4.jpg','0.08333972766174172'),
+ (312,'index5.jpg','0.07830019301762588');
+/*!40000 ALTER TABLE `imagematches` ENABLE KEYS */;
+
+
+--
+-- Definition of table `questions`
+--
+
+DROP TABLE IF EXISTS `questions`;
+CREATE TABLE `questions` (
+  `qid` int(11) NOT NULL AUTO_INCREMENT,
+  `temperature` varchar(900) DEFAULT NULL,
+  `rainfall` varchar(900) DEFAULT NULL,
+  `soil` varchar(900) DEFAULT NULL,
+  `light` varchar(900) DEFAULT NULL,
+  `ph` varchar(90) DEFAULT NULL,
+  `season` varchar(900) DEFAULT NULL,
+  `answer` varchar(900) DEFAULT NULL,
+  PRIMARY KEY (`qid`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `questions`
+--
+
+/*!40000 ALTER TABLE `questions` DISABLE KEYS */;
+INSERT INTO `questions` (`qid`,`temperature`,`rainfall`,`soil`,`light`,`ph`,`season`,`answer`) VALUES 
+ (5,'11','12-323','sas','12','12','12','12'),
+ (6,'11','12-323','sas','12','12','asdada','asddas'),
+ (7,'11','12-323','sas','12','12','12','12'),
+ (8,'11','12-323','sas','12','12','12','12'),
+ (9,'20 -- 27','175 - 300','podzolic alluviul, heavy clay','12','6','12','12'),
+ (10,'11','12-323','sas','12','12','asdada','asddas'),
+ (11,'20 -- 27','175 - 300','podzolic alluviul, heavy clay','12','6','Kharif','Start planting of soyabean'),
+ (12,'11','12-323','sas','12','12','asdada','asddas'),
+ (13,'20 -- 27','175 - 300','podzolic alluviul','12','6','Kharif','Start planting of soyabean'),
+ (14,'11','12-323','sas','12','12','asdada','asddas'),
+ (15,'20 -- 27','175 - 300','podzolic alluviul, heavy clay, riverine alluvial, Clayey Loam','12','6','Kharif','Start planting of soyabean'),
+ (16,'11','12-323','sas','12','12','asdada','asddas'),
+ (17,'20 -- 27','175 - 300','podzolic alluviul, heavy clay, riverine alluvial, Clayey Loam','12','6','Kharif','Start planting of soyabean');
+/*!40000 ALTER TABLE `questions` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
